@@ -422,15 +422,14 @@ PRODUCT_PACKAGES += \
     VisualizationWallpapers
 
 PRODUCT_PACKAGES += \
-    OmniTorch \
-    LegacyCamera \
-    LockClock
+    OmniTorch
 
 # Bluetooth & FmRadio
 PRODUCT_PACKAGES += \
     bt_sco_app \
     BluetoothSCOApp \
-    libtinyalsa
+    libtinyalsa \
+    uim-sysfs
 
 # General
 PRODUCT_PROPERTY_OVERRIDES := \
@@ -445,7 +444,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 $(call inherit-product, build/target/product/full.mk)
 
-$(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk)
+#$(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk)
 
 # call dalvik heap config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
