@@ -66,7 +66,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(PATH_FILES)/etc/permissions/com.huawei.hwextcamera.xml:system/etc/permissions/com.huawei.hwextcamera.xml \
-    $(PATH_FILES)/etc/permissions/hwframework.xml:system/etc/permissions/hwframework.xml
+    $(PATH_FILES)/etc/permissions/hwframework.xml:system/etc/permissions/hwframework.xml \
+    $(PATH_FILES)/etc/permissions/platform.xml:system/etc/permissions/platform.xml
 
 PRODUCT_COPY_FILES += \
     $(PATH_FILES)/framework/framework-res-hwext.apk:system/framework/framework-res-hwext.apk \
