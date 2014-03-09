@@ -87,10 +87,10 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/egl/libGLESv2_VIVANTE.so:system/lib/egl/libGLESv2_VIVANTE.so
 
 PRODUCT_COPY_FILES += \
-    $(PATH_FILES)/lib/hw/audio.a2dp.default.so:system/lib/hw/audio.a2dp.default.so.so \
+    $(PATH_FILES)/lib/hw/audio.a2dp.default.so:system/lib/hw/audio.a2dp.default.so \
     $(PATH_FILES)/lib/hw/audio.primary.k3v2oem1.so:system/lib/hw/audio.primary.hwp6_u06.so \
     $(PATH_FILES)/lib/hw/audio_policy.k3v2oem1.so:system/lib/hw/audio_policy.hwp6_u06.so \
-    $(PATH_FILES)/lib/hw/bluetooth.default.so:system/lib/hw/bluetooth.default.so.so \
+    $(PATH_FILES)/lib/hw/bluetooth.default.so:system/lib/hw/bluetooth.default.so \
     $(PATH_FILES)/lib/hw/camera.k3v2oem1.so:system/lib/hw/camera.k3v2oem1.so \
     $(PATH_FILES)/lib/hw/copybit.k3v2oem1.so:system/lib/hw/copybit.k3v2oem1.so \
     $(PATH_FILES)/lib/hw/gps.k3v2oem1.so:system/lib/hw/gps.k3v2oem1.so \
