@@ -1,0 +1,4 @@
+#=1: popup dialog to prompt that device power collapse, =0: do not prompt and record exception directly
+powercollapse=1
+monitor_process=mediaserver zygote system_server rild com.android.browser init surfaceflinger bluetoothd
+coredump=/sdcard/log/backup/
