@@ -122,6 +122,7 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/libgnssutils.so:system/lib/libgnssutils.so \
     $(PATH_FILES)/lib/libgnuexif.so:system/lib/libgnuexif.so \
     $(PATH_FILES)/lib/libgui.so:system/lib/libgui.so \
+    $(PATH_FILES)/lib/libhardware_legacy.so:system/lib/libhardware_legacy.so \
     $(PATH_FILES)/lib/libhdr.so:system/lib/libhdr.so \
     $(PATH_FILES)/lib/libhelixplayer.so:system/lib/libhelixplayer.so \
     $(PATH_FILES)/lib/libhuawei-audio-ril.so:system/lib/libhuawei-audio-ril.so \
