@@ -15,9 +15,11 @@
 PATH_FILES := vendor/huawei/hwp6_u06/proprietary
 
 PRODUCT_COPY_FILES += \
-    $(PATH_FILES)/app/HwVPlayer.apk:system/app/HwVPlayer.apk
+    $(PATH_FILES)/app/HwVPlayer.apk:system/app/HwVPlayer.apk \
+    $(PATH_FILES)/app/Superuser.apk:system/app/Superuser.apk
 
 PRODUCT_COPY_FILES += \
+    $(PATH_FILES)/bin/.ext/.su:system/bin/.ext/.su \
     $(PATH_FILES)/bin/agnss_connect:system/bin/agnss_connect \
     $(PATH_FILES)/bin/akm8975:system/bin/akm8975 \
     $(PATH_FILES)/bin/akmd8963:system/bin/akmd8963 \
@@ -65,9 +67,12 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/bin/test_server:system/bin/test_server
 
 PRODUCT_COPY_FILES += \
+    $(PATH_FILES)/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon \
     $(PATH_FILES)/etc/permissions/com.huawei.hwextcamera.xml:system/etc/permissions/com.huawei.hwextcamera.xml \
     $(PATH_FILES)/etc/permissions/hwframework.xml:system/etc/permissions/hwframework.xml \
-    $(PATH_FILES)/etc/permissions/platform.xml:system/etc/permissions/platform.xml
+    $(PATH_FILES)/etc/permissions/platform.xml:system/etc/permissions/platform.xml \
+    $(PATH_FILES)/etc/installed_su_daemon:system/etc/.installed_su_daemon \
+    $(PATH_FILES)/etc/install-recovery.sh:system/etc/install-recovery.sh
 
 PRODUCT_COPY_FILES += \
     $(PATH_FILES)/framework/framework-res-hwext.apk:system/framework/framework-res-hwext.apk \
@@ -243,3 +248,7 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/vendor/firmware/fmc_ch8_1893.3.bts:system/vendor/firmware/fmc_ch8_1893.3.bts \
     $(PATH_FILES)/vendor/firmware/fm_rx_ch8_1893.3.bts:system/vendor/firmware/fm_rx_ch8_1893.3.bts \
     $(PATH_FILES)/vendor/firmware/TIInit_12.8.32.bts:system/vendor/firmware/TIInit_12.8.32.bts
+
+PRODUCT_COPY_FILES += \
+    $(PATH_FILES)/xbin/daemonsu:system/xbin/daemonsu \
+    $(PATH_FILES)/xbin/su:system/xbin/su
