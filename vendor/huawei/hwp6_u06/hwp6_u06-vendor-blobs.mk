@@ -15,6 +15,9 @@
 PATH_FILES := vendor/huawei/hwp6_u06/proprietary
 
 PRODUCT_COPY_FILES += \
+    $(PATH_FILES)/app/HwVPlayer.apk:system/app/HwVPlayer.apk
+
+PRODUCT_COPY_FILES += \
     $(PATH_FILES)/bin/agnss_connect:system/bin/agnss_connect \
     $(PATH_FILES)/bin/akm8975:system/bin/akm8975 \
     $(PATH_FILES)/bin/akmd8963:system/bin/akmd8963 \
