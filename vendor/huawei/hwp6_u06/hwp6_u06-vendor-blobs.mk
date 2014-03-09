@@ -195,6 +195,7 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/libscremoteevtmgr.so:system/lib/libscremoteevtmgr.so \
     $(PATH_FILES)/lib/libscremotell.so:system/lib/libscremotell.so \
     $(PATH_FILES)/lib/libscremoteprotocol.so:system/lib/libscremoteprotocol.so \
+    $(PATH_FILES)/lib/libskia.so:system/lib/libskia.so \
     $(PATH_FILES)/lib/libsprd-ril.so:system/lib/libsprd-ril.so \
     $(PATH_FILES)/lib/libstagefrighthw.so:system/lib/libstagefrighthw.so \
     $(PATH_FILES)/lib/libstagefright_soft_ddpdec.so:system/lib/libstagefright_soft_ddpdec.so \
