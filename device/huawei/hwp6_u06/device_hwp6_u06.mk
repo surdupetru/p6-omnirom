@@ -429,7 +429,8 @@ PRODUCT_PACKAGES += \
     bt_sco_app \
     BluetoothSCOApp \
     libtinyalsa \
-    uim-sysfs
+    uim-sysfs \
+    libbt-vendor
 
 # General
 PRODUCT_PROPERTY_OVERRIDES := \

@@ -250,8 +250,5 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/vendor/firmware/TIInit_12.8.32.bts:system/vendor/firmware/TIInit_12.8.32.bts
 
 PRODUCT_COPY_FILES += \
-    $(PATH_FILES)/vendor/lib/libbt-vendor.so:system/vendor/lib/libbt-vendor.so
-
-PRODUCT_COPY_FILES += \
     $(PATH_FILES)/xbin/daemonsu:system/xbin/daemonsu \
     $(PATH_FILES)/xbin/su:system/xbin/su
