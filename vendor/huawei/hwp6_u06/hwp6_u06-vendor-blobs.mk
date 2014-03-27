@@ -122,8 +122,10 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/libBestShot.so:system/lib/libBestShot.so \
     $(PATH_FILES)/lib/libBMapApiEngine_v1_3_5.so:system/lib/libBMapApiEngine_v1_3_5.so \
     $(PATH_FILES)/lib/libboard_param.so:system/lib/libboard_param.so \
+    $(PATH_FILES)/lib/libcamera_client.so:system/lib/libcamera_client.so \
     $(PATH_FILES)/lib/libcamera_core.so:system/lib/libcamera_core.so \
     $(PATH_FILES)/lib/libcamera_omron.so:system/lib/libcamera_omron.so \
+    $(PATH_FILES)/lib/libcameraservice.so:system/lib/libcameraservice.so \
     $(PATH_FILES)/lib/libclientlogger.so:system/lib/libclientlogger.so \
     $(PATH_FILES)/lib/libcryptor-1.0.0-legacy.so:system/lib/libcryptor-1.0.0-legacy.so \
     $(PATH_FILES)/lib/libcutils.so:system/lib/libcutils.so \
@@ -171,6 +173,7 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/liblocSDK3.so:system/lib/liblocSDK3.so \
     $(PATH_FILES)/lib/liblocSDK_2_5OEM.so:system/lib/liblocSDK_2_5OEM.so \
     $(PATH_FILES)/lib/libmedia.so:system/lib/libmedia.so \
+    $(PATH_FILES)/lib/libmediaplayerservice.so:system/lib/libmediaplayerservice.so \
     $(PATH_FILES)/lib/libMirrorAudioService.so:system/lib/libMirrorAudioService.so \
     $(PATH_FILES)/lib/libmorpho_memory_allocator.so:system/lib/libmorpho_memory_allocator.so \
     $(PATH_FILES)/lib/libmorpho_panorama_gp.so:system/lib/libmorpho_panorama_gp.so \
@@ -197,10 +200,20 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/libscremoteprotocol.so:system/lib/libscremoteprotocol.so \
     $(PATH_FILES)/lib/libskia.so:system/lib/libskia.so \
     $(PATH_FILES)/lib/libsprd-ril.so:system/lib/libsprd-ril.so \
+    $(PATH_FILES)/lib/libstagefright.so:system/lib/libstagefright.so \
+    $(PATH_FILES)/lib/libstagefright_amrnb_common.so:system/lib/libstagefright_amrnb_common.so \
+    $(PATH_FILES)/lib/libstagefright_avc_common.so:system/lib/libstagefright_avc_common.so \
+    $(PATH_FILES)/lib/libstagefright_chromium_http.so:system/lib/libstagefright_chromium_http.so \
+    $(PATH_FILES)/lib/libstagefright_enc_common.so:system/lib/libstagefright_enc_common.so \
+    $(PATH_FILES)/lib/libstagefright_foundation.so:system/lib/libstagefright_foundation.so \
+    $(PATH_FILES)/lib/libstagefright_httplive.so:system/lib/libstagefright_httplive.so \
     $(PATH_FILES)/lib/libstagefrighthw.so:system/lib/libstagefrighthw.so \
+    $(PATH_FILES)/lib/libstagefright_omx.so:system/lib/libstagefright_omx.so \
     $(PATH_FILES)/lib/libstagefright_soft_ddpdec.so:system/lib/libstagefright_soft_ddpdec.so \
     $(PATH_FILES)/lib/libstagefright_soft_ffmpegaudiodec.so:system/lib/libstagefright_soft_ffmpegaudiodec.so \
     $(PATH_FILES)/lib/libstagefright_soft_ffmpegvideodec.so:system/lib/libstagefright_soft_ffmpegvideodec.so \
+    $(PATH_FILES)/lib/libstagefright_wfd.so:system/lib/libstagefright_wfd.so \
+    $(PATH_FILES)/lib/libstagefright_yuv.so:system/lib/libstagefright_yuv.so \
     $(PATH_FILES)/lib/libsupl10client.so:system/lib/libsupl10client.so \
     $(PATH_FILES)/lib/libsupl20client.so:system/lib/libsupl20client.so \
     $(PATH_FILES)/lib/libsupl20comon.so:system/lib/libsupl20comon.so \
@@ -253,3 +266,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(PATH_FILES)/xbin/daemonsu:system/xbin/daemonsu \
     $(PATH_FILES)/xbin/su:system/xbin/su
+
+PRODUCT_COPY_FILES += \
+    $(PATH_FILES)/isp.bin:system/isp.bin \
+    $(PATH_FILES)/ons.bin:system/ons.bin
