@@ -301,24 +301,28 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/default/cm_sky.dat:system/etc/camera/davinci/default/cm_sky.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/default/cm_sunset.dat:system/etc/camera/davinci/default/cm_sunset.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/default/imgproc.xml:system/etc/camera/davinci/default/imgproc.xml \
+    $(LOCAL_PATH)/prebuilt/etc/camera/davinci/default/multiframe.xml:system/etc/camera/davinci/default/multiframe.xml \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/hi542/cm_correction.dat:system/etc/camera/davinci/hi542/cm_correction.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/hi542/cm_foliage.dat:system/etc/camera/davinci/hi542/cm_foliage.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/hi542/cm_normal.dat:system/etc/camera/davinci/hi542/cm_normal.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/hi542/cm_sky.dat:system/etc/camera/davinci/hi542/cm_sky.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/hi542/cm_sunset.dat:system/etc/camera/davinci/hi542/cm_sunset.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/hi542/imgproc.xml:system/etc/camera/davinci/hi542/imgproc.xml \
+    $(LOCAL_PATH)/prebuilt/etc/camera/davinci/hi542/multiframe.xml:system/etc/camera/davinci/hi542/multiframe.xml \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/ov8830/cm_correction.dat:system/etc/camera/davinci/ov8830/cm_correction.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/ov8830/cm_foliage.dat:system/etc/camera/davinci/ov8830/cm_foliage.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/ov8830/cm_normal.dat:system/etc/camera/davinci/ov8830/cm_normal.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/ov8830/cm_sky.dat:system/etc/camera/davinci/ov8830/cm_sky.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/ov8830/cm_sunset.dat:system/etc/camera/davinci/ov8830/cm_sunset.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/ov8830/imgproc.xml:system/etc/camera/davinci/ov8830/imgproc.xml \
+    $(LOCAL_PATH)/prebuilt/etc/camera/davinci/ov8830/multiframe.xml:system/etc/camera/davinci/ov8830/multiframe.xml \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/s5k4e1ga_foxconn/cm_correction.dat:system/etc/camera/davinci/s5k4e1ga_foxconn/cm_correction.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/s5k4e1ga_foxconn/cm_foliage.dat:system/etc/camera/davinci/s5k4e1ga_foxconn/cm_foliage.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/s5k4e1ga_foxconn/cm_normal.dat:system/etc/camera/davinci/s5k4e1ga_foxconn/cm_normal.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/s5k4e1ga_foxconn/cm_sky.dat:system/etc/camera/davinci/s5k4e1ga_foxconn/cm_sky.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/s5k4e1ga_foxconn/cm_sunset.dat:system/etc/camera/davinci/s5k4e1ga_foxconn/cm_sunset.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/s5k4e1ga_foxconn/imgproc.xml:system/etc/camera/davinci/s5k4e1ga_foxconn/imgproc.xml \
+    $(LOCAL_PATH)/prebuilt/etc/camera/davinci/s5k4e1ga_foxconn/multiframe.xml:system/etc/camera/davinci/s5k4e1ga_foxconn/multiframe.xml \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx134_liteon/cm_correction.dat:system/etc/camera/davinci/sonyimx134_liteon/cm_correction.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx134_liteon/cm_foliage.dat:system/etc/camera/davinci/sonyimx134_liteon/cm_foliage.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx134_liteon/cm_normal.dat:system/etc/camera/davinci/sonyimx134_liteon/cm_normal.dat \
@@ -326,6 +330,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx134_liteon/cm_sunset.dat:system/etc/camera/davinci/sonyimx134_liteon/cm_sunset.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx134_liteon/imgproc.xml:system/etc/camera/davinci/sonyimx134_liteon/imgproc.xml \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx134_liteon/luma_boost.dat:system/etc/camera/davinci/sonyimx134_liteon/luma_boost.dat \
+    $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx134_liteon/multiframe.xml:system/etc/camera/davinci/sonyimx134_liteon/multiframe.xml \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx134_liteon/skin_mask_lite.dat:system/etc/camera/davinci/sonyimx134_liteon/skin_mask_lite.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx135_liteon/cm_correction.dat:system/etc/camera/davinci/sonyimx135_liteon/cm_correction.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx135_liteon/cm_foliage.dat:system/etc/camera/davinci/sonyimx135_liteon/cm_foliage.dat \
@@ -333,6 +338,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx135_liteon/cm_sky.dat:system/etc/camera/davinci/sonyimx135_liteon/cm_sky.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx135_liteon/cm_sunset.dat:system/etc/camera/davinci/sonyimx135_liteon/cm_sunset.dat \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx135_liteon/imgproc.xml:system/etc/camera/davinci/sonyimx135_liteon/imgproc.xml \
+    $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx135_liteon/multiframe.xml:system/etc/camera/davinci/sonyimx135_liteon/multiframe.xml \
     $(LOCAL_PATH)/prebuilt/etc/camera/lowlight/lowlightcfg.xml:system/etc/camera/lowlight/lowlightcfg.xml \
     $(LOCAL_PATH)/prebuilt/etc/camera/meitu/moran.mtdata:system/etc/camera/meitu/moran.mtdata \
     $(LOCAL_PATH)/prebuilt/etc/camera/tornado/ExpMatrixTOA.txt:system/etc/camera/tornado/ExpMatrixTOA.txt \
