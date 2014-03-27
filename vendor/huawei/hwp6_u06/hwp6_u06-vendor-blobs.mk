@@ -28,7 +28,6 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/bin/codec:system/bin/codec \
     $(PATH_FILES)/bin/cplc_main:system/bin/cplc_main \
     $(PATH_FILES)/bin/devproxy:system/bin/devproxy \
-    $(PATH_FILES)/bin/dexopt-wrapper:system/bin/dexopt-wrapper \
     $(PATH_FILES)/bin/diagserver:system/bin/diagserver \
     $(PATH_FILES)/bin/geomagneticd:system/bin/geomagneticd \
     $(PATH_FILES)/bin/hwd:system/bin/hwd \
@@ -68,18 +67,9 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(PATH_FILES)/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon \
-    $(PATH_FILES)/etc/permissions/com.huawei.hwextcamera.xml:system/etc/permissions/com.huawei.hwextcamera.xml \
-    $(PATH_FILES)/etc/permissions/hwframework.xml:system/etc/permissions/hwframework.xml \
     $(PATH_FILES)/etc/permissions/platform.xml:system/etc/permissions/platform.xml \
     $(PATH_FILES)/etc/installed_su_daemon:system/etc/.installed_su_daemon \
     $(PATH_FILES)/etc/install-recovery.sh:system/etc/install-recovery.sh
-
-PRODUCT_COPY_FILES += \
-    $(PATH_FILES)/framework/framework-res-hwext.apk:system/framework/framework-res-hwext.apk \
-    $(PATH_FILES)/framework/hwextcamera.jar:system/framework/hwextcamera.jar \
-    $(PATH_FILES)/framework/hwextcamera.odex:system/framework/hwextcamera.odex \
-    $(PATH_FILES)/framework/hwframework.jar:system/framework/hwframework.jar \
-    $(PATH_FILES)/framework/hwframework.odex:system/framework/hwframework.odex
 
 PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/egl/libEGL_VIVANTE.so:system/lib/egl/libEGL_VIVANTE.so \
@@ -237,10 +227,6 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/libvpp.so:system/lib/libvpp.so \
     $(PATH_FILES)/lib/libwvm.so:system/lib/libwvm.so \
     $(PATH_FILES)/lib/libxgold-ril.so:system/lib/libxgold-ril.so
-
-PRODUCT_COPY_FILES += \
-    $(PATH_FILES)/priv-app/Gallery2.apk:system/priv-app/Gallery2.apk \
-    $(PATH_FILES)/priv-app/Gallery2.odex:system/priv-app/Gallery2.odex
 
 PRODUCT_COPY_FILES += \
     $(PATH_FILES)/vendor/firmware/ti-connectivity/wl18xx-conf/wl18xx-conf.bin:system/vendor/firmware/ti-connectivity/wl18xx-conf/wl18xx-conf.bin \
