@@ -6,7 +6,7 @@ USE_CAMERA_STUB := true
 TARGET_PROVIDES_LIBAUDIO := true
 BOARD_USES_GENERIC_AUDIO := false
 
-BOARD_NEED_OMX_COMPAT := true
+#BOARD_NEED_OMX_COMPAT := true
 
 # inherit from the proprietary version
 include vendor/huawei/hwp6_u06/BoardConfigVendor.mk
@@ -90,6 +90,8 @@ USE_OPENGL_RENDERER := true
 # Tuning
 BOARD_HARDWARE_CLASS := device/huawei/hwp6_u06/cmhw/
 
+BOARD_SCREENRECORD_DEVICE_FORCE_AUDIO_MIC := true
+
 
 # Kernel
 BOARD_KERNEL_CMDLINE := vmalloc=384M k3v2_pmem=1 mmcparts=mmcblk0:p1(xloader),p3(nvme),p4(misc),p5(splash),p6(oeminfo),p7(reserved1),p8(reserved2),p9(splash2),p10(recovery2),p11(recovery),p12(boot),p13(modemimage),p14(modemnvm1),p15(modemnvm2),p16(system),p17(cache),p18(cust),p19(userdata);mmcblk1:p1(ext_sdcard)
@@ -172,4 +174,5 @@ BOARD_SEPOLICY_UNION += \
     rild.te \
     system.te \
     vold.te \
-    healthd.te
+    healthd.te \
+    zygote.te

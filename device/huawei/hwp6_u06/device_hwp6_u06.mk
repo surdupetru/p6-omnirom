@@ -21,12 +21,22 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/root/ueventd.k3v2oem1.rc:root/ueventd.k3v2oem1.rc \
     $(LOCAL_PATH)/root/fstab.k3v2oem1:root/fstab.k3v2oem1 \
+    $(LOCAL_PATH)/root/init.k3v2oem1.rc:root/init.k3v2oem1.rc \
+    $(LOCAL_PATH)/root/init.k3v2oem1.usb.rc:root/init.k3v2oem1.usb.rc \
+    $(LOCAL_PATH)/root/init.rc:root/init.rc \
+    $(LOCAL_PATH)/root/ueventd.k3v2oem1.rc:root/ueventd.k3v2oem1.rc \
+    $(LOCAL_PATH)/root/ueventd.rc:root/ueventd.rc
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/root/sbin/6085downloader:root/sbin/6085downloader \
+    $(LOCAL_PATH)/root/sbin/mtk_update:root/sbin/mtk_update \
+    $(LOCAL_PATH)/root/sbin/updatemodem:root/sbin/updatemodem
+
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
     $(LOCAL_PATH)/root/ueventd.k3v2oem1.rc:recovery/root/ueventd.k3v2oem1.rc \
-    $(LOCAL_PATH)/root/fstab.k3v2oem1:recovery/root/fstab.k3v2oem1 \
-    $(LOCAL_PATH)/root/ueventd.rc:root/ueventd.rc
+    $(LOCAL_PATH)/root/fstab.k3v2oem1:recovery/root/fstab.k3v2oem1
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -397,7 +407,12 @@ PRODUCT_PACKAGES += \
     libaudioutils \
     audioloop \
     libaudio-resampler \
-    libemoji
+    libemoji \
+    sf2 \
+    stream \
+    record \
+    recordvideo \
+    codec
 
 # Wifi
 PRODUCT_COPY_FILES += \
