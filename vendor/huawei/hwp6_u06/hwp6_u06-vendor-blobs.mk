@@ -126,6 +126,7 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/libcamera_omron.so:system/lib/libcamera_omron.so \
     $(PATH_FILES)/lib/libcameraservice.so:system/lib/libcameraservice.so \
     $(PATH_FILES)/lib/libclientlogger.so:system/lib/libclientlogger.so \
+    $(PATH_FILES)/lib/libcutils.so:system/lib/libcutils.so \
     $(PATH_FILES)/lib/libdevproxy.so:system/lib/libdevproxy.so \
     $(PATH_FILES)/lib/libdexanalysis.so:system/lib/libdexanalysis.so \
     $(PATH_FILES)/lib/libdolbyaudioeffectnativeservice.so:system/lib/libdolbyaudioeffectnativeservice.so \
@@ -183,6 +184,7 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/libscremoteevtmgr.so:system/lib/libscremoteevtmgr.so \
     $(PATH_FILES)/lib/libscremotell.so:system/lib/libscremotell.so \
     $(PATH_FILES)/lib/libscremoteprotocol.so:system/lib/libscremoteprotocol.so \
+    $(PATH_FILES)/lib/libskia.so:system/lib/libskia.so \
     $(PATH_FILES)/lib/libsohuplayer_jni.so:system/lib/libsohuplayer_jni.so \
     $(PATH_FILES)/lib/libsprd-ril.so:system/lib/libsprd-ril.so \
     $(PATH_FILES)/lib/libstagefright.so:system/lib/libstagefright.so \

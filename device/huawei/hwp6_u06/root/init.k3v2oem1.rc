@@ -28,6 +28,8 @@ on init
     mkdir /mnt/media_rw 0700 media_rw media_rw
     mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
     mkdir /storage/sdcard1 0700 root root
+
+
  
     mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
     mkdir /storage/usbotg 0700 root root
@@ -37,6 +39,10 @@ on post-fs-data
     mkdir /data/media 0775 media_rw media_rw
     chown media_rw media_rw /data/media
     chmod 0775 /data/media
+
+    mkdir /data/share 0775 sdcard_rw sdcard_rw
+    chown sdcard_rw sdcard_rw /data/share
+    chmod 0775 /data/share
 
     setprop vold.post_fs_data_done 1
 
@@ -366,13 +372,7 @@ on boot
     chown system system /sys/module/n_gsm_mtk/parameters/debug
 
 service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated/ 1023 1023
-   class late_start
-
-on property:ro.fuse_sdcard=true
-    start sdcard
-
-on property:ro.crypto.fuse_sdcard=true
-    start sdcard
+   class main
 
 service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1015 -d /mnt/media_rw/sdcard1 /storage/sdcard1
    class late_start
