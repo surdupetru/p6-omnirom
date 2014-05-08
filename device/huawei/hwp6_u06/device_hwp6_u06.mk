@@ -1,5 +1,5 @@
 # The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
+#$(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
@@ -21,22 +21,58 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/root/fstab.k3v2oem1:root/fstab.k3v2oem1 \
+    $(LOCAL_PATH)/recovery/fstab.k3v2oem1:root/fstab.k3v2oem1 \
     $(LOCAL_PATH)/root/init.k3v2oem1.rc:root/init.k3v2oem1.rc \
     $(LOCAL_PATH)/root/init.k3v2oem1.usb.rc:root/init.k3v2oem1.usb.rc \
     $(LOCAL_PATH)/root/init.rc:root/init.rc \
-    $(LOCAL_PATH)/root/ueventd.k3v2oem1.rc:root/ueventd.k3v2oem1.rc \
-    $(LOCAL_PATH)/root/ueventd.rc:root/ueventd.rc
+    $(LOCAL_PATH)/recovery/ueventd.k3v2oem1.rc:root/ueventd.k3v2oem1.rc \
+    $(LOCAL_PATH)/recovery/ueventd.rc:root/ueventd.rc
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/root/sbin/6085downloader:root/sbin/6085downloader \
-    $(LOCAL_PATH)/root/sbin/mtk_update:root/sbin/mtk_update \
-    $(LOCAL_PATH)/root/sbin/updatemodem:root/sbin/updatemodem
+    $(LOCAL_PATH)/recovery/sbin/6085downloader:root/sbin/6085downloader \
+    $(LOCAL_PATH)/recovery/sbin/mtk_update:root/sbin/mtk_update \
+    $(LOCAL_PATH)/recovery/sbin/updatemodem:root/sbin/updatemodem
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh \
-    $(LOCAL_PATH)/root/ueventd.k3v2oem1.rc:recovery/root/ueventd.k3v2oem1.rc \
-    $(LOCAL_PATH)/root/fstab.k3v2oem1:recovery/root/fstab.k3v2oem1
+    $(LOCAL_PATH)/recovery/sbin/6085downloader:recovery/root/sbin/6085downloader \
+    $(LOCAL_PATH)/recovery/sbin/mtk_update:recovery/root/sbin/mtk_update \
+    $(LOCAL_PATH)/recovery/sbin/updatemodem:recovery/root/sbin/updatemodem
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/ueventd.k3v2oem1.rc:recovery/root/ueventd.k3v2oem1.rc \
+    $(LOCAL_PATH)/recovery/ueventd.rc:recovery/root/ueventd.rc \
+    $(LOCAL_PATH)/recovery/fstab.k3v2oem1:recovery/root/fstab.k3v2oem1 \
+    $(LOCAL_PATH)/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/system/bin/linker:recovery/root/system/bin/linker \
+    $(LOCAL_PATH)/recovery/system/lib/libc.so:recovery/root/system/lib/libc.so \
+    $(LOCAL_PATH)/recovery/system/lib/libdl.so:recovery/root/system/lib/libdl.so \
+    $(LOCAL_PATH)/recovery/system/lib/libm.so:recovery/root/system/lib/libm.so \
+    $(LOCAL_PATH)/recovery/system/lib/libstdc++.so:recovery/root/system/lib/libstdc++.so \
+    $(LOCAL_PATH)/recovery/system/lib/libz.so:recovery/root/system/lib/libz.so
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/batt_level_scale.png:recovery/root/res/images/720x1280/batt_level_scale.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/batt_level_top.png:recovery/root/res/images/720x1280/batt_level_top.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/bg.png:recovery/root/res/images/720x1280/bg.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/empty_charge.png:recovery/root/res/images/720x1280/empty_charge.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/err_charge.png:recovery/root/res/images/720x1280/err_charge.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/full_charge.png:recovery/root/res/images/720x1280/full_charge.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/number_0.png:recovery/root/res/images/720x1280/number_0.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/number_1.png:recovery/root/res/images/720x1280/number_1.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/number_2.png:recovery/root/res/images/720x1280/number_2.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/number_3.png:recovery/root/res/images/720x1280/number_3.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/number_4.png:recovery/root/res/images/720x1280/number_4.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/number_5.png:recovery/root/res/images/720x1280/number_5.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/number_6.png:recovery/root/res/images/720x1280/number_6.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/number_7.png:recovery/root/res/images/720x1280/number_7.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/number_8.png:recovery/root/res/images/720x1280/number_8.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/number_9.png:recovery/root/res/images/720x1280/number_9.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/percent_5.png:recovery/root/res/images/720x1280/percent_5.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/percent_10.png:recovery/root/res/images/720x1280/percent_10.png \
+    $(LOCAL_PATH)/recovery/res/images/720x1280/percent_sign.png:recovery/root/res/images/720x1280/percent_sign.png
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -68,12 +104,29 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/gnss/RXN/security.key:system/etc/gnss/RXN/security.key
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/etc/t_conf/C9800D_conf:system/etc/t_conf/C9800D_conf \
+    $(LOCAL_PATH)/prebuilt/etc/t_conf/CEDGE_conf:system/etc/t_conf/CEDGE_conf \
+    $(LOCAL_PATH)/prebuilt/etc/t_conf/D2_conf:system/etc/t_conf/D2_conf \
+    $(LOCAL_PATH)/prebuilt/etc/t_conf/T9800L_conf:system/etc/t_conf/T9800L_conf \
+    $(LOCAL_PATH)/prebuilt/etc/t_conf/TEDGE_conf:system/etc/t_conf/TEDGE_conf \
+    $(LOCAL_PATH)/prebuilt/etc/t_conf/thermal.conf:system/etc/t_conf/thermal.conf \
+    $(LOCAL_PATH)/prebuilt/etc/t_conf/U9700L_conf:system/etc/t_conf/U9700L_conf \
+    $(LOCAL_PATH)/prebuilt/etc/t_conf/U9800D_conf:system/etc/t_conf/U9800D_conf \
+    $(LOCAL_PATH)/prebuilt/etc/t_conf/U9900_conf:system/etc/t_conf/U9900_conf \
+    $(LOCAL_PATH)/prebuilt/etc/t_conf/UEDGE_conf:system/etc/t_conf/UEDGE_conf
+
+
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/asound_ADL.dat:system/etc/asound_ADL.dat \
+    $(LOCAL_PATH)/prebuilt/etc/audio_effects.conf:system/etc/audio_effects.conf \
     $(LOCAL_PATH)/prebuilt/etc/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/prebuilt/etc/camera_orientation.cfg:system/etc/camera_orientation.cfg \
     $(LOCAL_PATH)/prebuilt/etc/camera_resolutions.cfg:system/etc/camera_resolutions.cfg \
     $(LOCAL_PATH)/prebuilt/etc/es305.bin:system/etc/es305.bin \
     $(LOCAL_PATH)/prebuilt/etc/es305_uart.bin:system/etc/es305_uart.bin \
+    $(LOCAL_PATH)/prebuilt/etc/globalAutoAdapt-conf.xml:system/etc/globalAutoAdapt-conf.xml \
+    $(LOCAL_PATH)/prebuilt/etc/globalMatchs-conf.xml:system/etc/globalMatchs-conf.xml \
+    $(LOCAL_PATH)/prebuilt/etc/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/prebuilt/etc/gpsconfig.xml:system/etc/gpsconfig.xml \
     $(LOCAL_PATH)/prebuilt/etc/k3_omx.cfg:system/etc/k3_omx.cfg \
     $(LOCAL_PATH)/prebuilt/etc/media_codecs.xml:system/etc/media_codecs.xml \
@@ -340,7 +393,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx135_liteon/imgproc.xml:system/etc/camera/davinci/sonyimx135_liteon/imgproc.xml \
     $(LOCAL_PATH)/prebuilt/etc/camera/davinci/sonyimx135_liteon/multiframe.xml:system/etc/camera/davinci/sonyimx135_liteon/multiframe.xml \
     $(LOCAL_PATH)/prebuilt/etc/camera/lowlight/lowlightcfg.xml:system/etc/camera/lowlight/lowlightcfg.xml \
-    $(LOCAL_PATH)/prebuilt/etc/camera/meitu/moran.mtdata:system/etc/camera/meitu/moran.mtdata \
     $(LOCAL_PATH)/prebuilt/etc/camera/tornado/ExpMatrixTOA.txt:system/etc/camera/tornado/ExpMatrixTOA.txt \
     $(LOCAL_PATH)/prebuilt/etc/camera/tornado/FireworksMinMaxTOA.txt:system/etc/camera/tornado/FireworksMinMaxTOA.txt \
     $(LOCAL_PATH)/prebuilt/etc/camera/tornado/FireworksModelTOA.model:system/etc/camera/tornado/FireworksModelTOA.model \
@@ -410,6 +462,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
+    audio.usb.default \
+    audio.r_submix.default \
     libaudioutils \
     audioloop \
     libaudio-resampler \
@@ -442,16 +496,17 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     VisualizationWallpapers
 
+#Torch
 PRODUCT_PACKAGES += \
     OmniTorch
 
-# Bluetooth & FmRadio
+# Bluetooth
 PRODUCT_PACKAGES += \
     bt_sco_app \
     BluetoothSCOApp \
     libtinyalsa \
-    uim-sysfs \
-    libbt-vendor
+    libbt-vendor \
+    uim-sysfs
 
 # General
 PRODUCT_PROPERTY_OVERRIDES := \
@@ -464,9 +519,42 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp,adb \
     ro.opengles.version=131072
 
-$(call inherit-product, build/target/product/full.mk)
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.enable-player=true \
+    media.stagefright.enable-meta=true \
+    media.stagefright.enable-scan=true \
+    media.stagefright.enable-http=true \
+    media.stagefright.enable-rtsp=true \
+    media.stagefright.enable-record=true \
+    net.rmnet0.dns1=8.8.8.8 \
+    net.rmnet0.dns2=8.8.4.4 \
+    net.dns1=8.8.8.8 \
+    net.dns2=8.8.4.4 \
 
-#$(call inherit-product-if-exists, hardware/ti/wpan/ti-wpan-products.mk)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.modem_hsic=true \
+    ro.thmodem.type=sprd \
+    ril.gsm.deviceid=-1 \
+    ril.cdma.deviceid=-1 \
+    ril.gsm.rssi=-1 \
+    ril.cdma.rssi=-1 \
+    persist.sys.logsystem.neversend=0 \
+    modify_ram_show=true \
+    persist.sys.phb.enable=1 \
+    persist.sys.phb.debug.enable=1 \
+    persist.sys.actualpoweron=true \
+    persist.radio.apm_sim_not_pwdn=1 \
+    ro.config.incall_notify_mms=true \
+    ro.config.hw_allow_ums_and_mtp=true \
+    ro.camera.sound.forced=1 \
+    keyguard.no_require_sim=true \
+    ro.config.hw_dolby=true \
+    ro.dolbywithheadset.enable=1 \
+    ro.streaming.video.drs=true \
+    media.aac_51_output_enabled=true \
+    af.resampler.quality=4    
+
+$(call inherit-product, build/target/product/full.mk)
 
 # call dalvik heap config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)

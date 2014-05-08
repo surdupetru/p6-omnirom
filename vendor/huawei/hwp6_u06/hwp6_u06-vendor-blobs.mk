@@ -15,17 +15,20 @@
 PATH_FILES := vendor/huawei/hwp6_u06/proprietary
 
 PRODUCT_COPY_FILES += \
-    $(PATH_FILES)/app/HwVPlayer.apk:system/app/HwVPlayer.apk \
-    $(PATH_FILES)/app/Superuser.apk:system/app/Superuser.apk
+    $(PATH_FILES)/app/DolbyMobileAudioEffectService.apk:system/app/DolbyMobileAudioEffectService.apk \
+    $(PATH_FILES)/app/GlobalDolbyEffect.apk:system/app/GlobalDolbyEffect.apk \
+    $(PATH_FILES)/app/InCallUI.apk:system/app/InCallUI.apk \
+    $(PATH_FILES)/app/Superuser.apk:system/app/Superuser.apk \
+    $(PATH_FILES)/app/supl20Service.apk:system/app/supl20Service.apk
 
 PRODUCT_COPY_FILES += \
     $(PATH_FILES)/bin/.ext/.su:system/bin/.ext/.su \
+    $(PATH_FILES)/bin/afar:system/bin/afar \
     $(PATH_FILES)/bin/agnss_connect:system/bin/agnss_connect \
     $(PATH_FILES)/bin/akm8975:system/bin/akm8975 \
     $(PATH_FILES)/bin/akmd8963:system/bin/akmd8963 \
     $(PATH_FILES)/bin/client_app:system/bin/client_app \
     $(PATH_FILES)/bin/client_hwd:system/bin/client_hwd \
-    $(PATH_FILES)/bin/codec:system/bin/codec \
     $(PATH_FILES)/bin/cplc_main:system/bin/cplc_main \
     $(PATH_FILES)/bin/devproxy:system/bin/devproxy \
     $(PATH_FILES)/bin/diagserver:system/bin/diagserver \
@@ -37,7 +40,7 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/bin/IMCdownload_App:system/bin/IMCdownload_App \
     $(PATH_FILES)/bin/imc_poweron:system/bin/imc_poweron \
     $(PATH_FILES)/bin/Injection_nv:system/bin/Injection_nv \
-    $(PATH_FILES)/bin/load_oemlogo:system/bin/load_oemlogo \
+    $(PATH_FILES)/bin/k3v2_thermal:system/bin/k3v2_thermal \
     $(PATH_FILES)/bin/Log_MD:system/bin/Log_MD \
     $(PATH_FILES)/bin/logserver:system/bin/logserver \
     $(PATH_FILES)/bin/MDM_DLOADER:system/bin/MDM_DLOADER \
@@ -56,20 +59,24 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/bin/pppoe:system/bin/pppoe \
     $(PATH_FILES)/bin/rild:system/bin/rild \
     $(PATH_FILES)/bin/RXN_IntApp:system/bin/RXN_IntApp \
-    $(PATH_FILES)/bin/screenrecord:system/bin/screenrecord \
     $(PATH_FILES)/bin/scremotell:system/bin/scremotell \
     $(PATH_FILES)/bin/ser2soc:system/bin/ser2soc \
     $(PATH_FILES)/bin/sprd_download:system/bin/sprd_download \
     $(PATH_FILES)/bin/supl20clientd:system/bin/supl20clientd \
     $(PATH_FILES)/bin/surfaceflinger:system/bin/surfaceflinger \
-    $(PATH_FILES)/bin/test_logsys:system/bin/test_logsys \
     $(PATH_FILES)/bin/test_server:system/bin/test_server
 
 PRODUCT_COPY_FILES += \
     $(PATH_FILES)/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon \
+    $(PATH_FILES)/etc/init.d/fix_superuser:system/etc/init.d/fix_superuser \
+    $(PATH_FILES)/etc/init.d/remove_dsp:system/etc/init.d/remove_dsp \
     $(PATH_FILES)/etc/permissions/platform.xml:system/etc/permissions/platform.xml \
+    $(PATH_FILES)/etc/dolby_config.xml:system/etc/dolby_config.xml \
     $(PATH_FILES)/etc/installed_su_daemon:system/etc/.installed_su_daemon \
     $(PATH_FILES)/etc/install-recovery.sh:system/etc/install-recovery.sh
+
+PRODUCT_COPY_FILES += \
+    $(PATH_FILES)/framework/telephony-common.jar:system/framework/telephony-common.jar
 
 PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/egl/libEGL_VIVANTE.so:system/lib/egl/libEGL_VIVANTE.so \
@@ -79,7 +86,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/hw/audio.a2dp.default.so:system/lib/hw/audio.a2dp.default.so \
     $(PATH_FILES)/lib/hw/audio.primary.k3v2oem1.so:system/lib/hw/audio.primary.hwp6_u06.so \
-    $(PATH_FILES)/lib/hw/audio_policy.k3v2oem1.so:system/lib/hw/audio_policy.hwp6_u06.so \
+    $(PATH_FILES)/lib/hw/audio_policy.default.so:system/lib/hw/audio_policy.hwp6_u06.so \
     $(PATH_FILES)/lib/hw/bluetooth.default.so:system/lib/hw/bluetooth.default.so \
     $(PATH_FILES)/lib/hw/camera.k3v2oem1.so:system/lib/hw/camera.k3v2oem1.so \
     $(PATH_FILES)/lib/hw/copybit.k3v2oem1.so:system/lib/hw/copybit.k3v2oem1.so \
@@ -101,6 +108,9 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/modules/wlcore_spi.ko:system/lib/modules/wlcore_spi.ko
 
 PRODUCT_COPY_FILES += \
+    $(PATH_FILES)/lib/soundfx/libdolbymobileeffect.so:system/lib/soundfx/libdolbymobileeffect.so
+
+PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/lib_8290.so:system/lib/lib_8290.so \
     $(PATH_FILES)/lib/libagnss.so:system/lib/libagnss.so \
     $(PATH_FILES)/lib/libapollo-1.1.2.so:system/lib/libapollo-1.1.2.so \
@@ -108,7 +118,6 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/libaudioflinger.so:system/lib/libaudioflinger.so \
     $(PATH_FILES)/lib/lib_balong_nvm.so:system/lib/lib_balong_nvm.so \
     $(PATH_FILES)/lib/libbalong-ril.so:system/lib/libbalong-ril.so \
-    $(PATH_FILES)/lib/libbase64encoder_v1_3.so:system/lib/libbase64encoder_v1_3.so \
     $(PATH_FILES)/lib/libBestShot.so:system/lib/libBestShot.so \
     $(PATH_FILES)/lib/libBMapApiEngine_v1_3_5.so:system/lib/libBMapApiEngine_v1_3_5.so \
     $(PATH_FILES)/lib/libboard_param.so:system/lib/libboard_param.so \
@@ -117,25 +126,20 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/libcamera_omron.so:system/lib/libcamera_omron.so \
     $(PATH_FILES)/lib/libcameraservice.so:system/lib/libcameraservice.so \
     $(PATH_FILES)/lib/libclientlogger.so:system/lib/libclientlogger.so \
-    $(PATH_FILES)/lib/libcryptor-1.0.0-legacy.so:system/lib/libcryptor-1.0.0-legacy.so \
-    $(PATH_FILES)/lib/libcutils.so:system/lib/libcutils.so \
-    $(PATH_FILES)/lib/libcyberplayer.so:system/lib/libcyberplayer.so \
-    $(PATH_FILES)/lib/libDeflatingDecompressor_V3.so:system/lib/libDeflatingDecompressor_V3.so \
     $(PATH_FILES)/lib/libdevproxy.so:system/lib/libdevproxy.so \
     $(PATH_FILES)/lib/libdexanalysis.so:system/lib/libdexanalysis.so \
-    $(PATH_FILES)/lib/libDictCompile.so:system/lib/libDictCompile.so \
     $(PATH_FILES)/lib/libdolbyaudioeffectnativeservice.so:system/lib/libdolbyaudioeffectnativeservice.so \
     $(PATH_FILES)/lib/libdolbymobileaudioeffect_jni.so:system/lib/libdolbymobileaudioeffect_jni.so \
-    $(PATH_FILES)/lib/libffmpeg.so:system/lib/libffmpeg.so \
     $(PATH_FILES)/lib/libffmpeg_v7_neon.so:system/lib/libffmpeg_v7_neon.so \
+    $(PATH_FILES)/lib/libfilterframework_jni.so:system/lib/libfilterframework_jni.so \
+    $(PATH_FILES)/lib/libflyfoxffmpeg.so:system/lib/libflyfoxffmpeg.so \
     $(PATH_FILES)/lib/lib_g1.so:system/lib/lib_g1.so \
     $(PATH_FILES)/lib/libGAL.so:system/lib/libGAL.so \
-    $(PATH_FILES)/lib/libgifcodec.so:system/lib/libgifcodec.so \
+    $(PATH_FILES)/lib/libgames_rtmp_jni.so:system/lib/libgames_rtmp_jni.so \
     $(PATH_FILES)/lib/libGLSLC.so:system/lib/libGLSLC.so \
     $(PATH_FILES)/lib/libgnssutils.so:system/lib/libgnssutils.so \
     $(PATH_FILES)/lib/libgnuexif.so:system/lib/libgnuexif.so \
     $(PATH_FILES)/lib/libgui.so:system/lib/libgui.so \
-    $(PATH_FILES)/lib/libhardware_legacy.so:system/lib/libhardware_legacy.so \
     $(PATH_FILES)/lib/libhdr.so:system/lib/libhdr.so \
     $(PATH_FILES)/lib/libhelixplayer.so:system/lib/libhelixplayer.so \
     $(PATH_FILES)/lib/libhuawei-audio-ril.so:system/lib/libhuawei-audio-ril.so \
@@ -144,8 +148,6 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/libisdb_omxcore.so:system/lib/libisdb_omxcore.so \
     $(PATH_FILES)/lib/libjni_omron_facebeautifier.so:system/lib/libjni_omron_facebeautifier.so \
     $(PATH_FILES)/lib/libjni_personrecognition.so:system/lib/libjni_personrecognition.so \
-    $(PATH_FILES)/lib/libjni_scremote.so:system/lib/libjni_scremote.so \
-    $(PATH_FILES)/lib/libjni_scremoteprotopkg.so:system/lib/libjni_scremoteprotopkg.so \
     $(PATH_FILES)/lib/libjpegdechw.so:system/lib/libjpegdechw.so \
     $(PATH_FILES)/lib/libk3jpeg.so:system/lib/libk3jpeg.so \
     $(PATH_FILES)/lib/lib_k3_ffmpeg.so:system/lib/lib_k3_ffmpeg.so \
@@ -157,38 +159,31 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/lib_k3_omx_rv.so:system/lib/lib_k3_omx_rv.so \
     $(PATH_FILES)/lib/lib_k3_omx_vc1.so:system/lib/lib_k3_omx_vc1.so \
     $(PATH_FILES)/lib/lib_k3_omx_vp8.so:system/lib/lib_k3_omx_vp8.so \
-    $(PATH_FILES)/lib/liblcajni.so:system/lib/liblcajni.so \
-    $(PATH_FILES)/lib/libLineBreak_V2.so:system/lib/libLineBreak_V2.so \
+    $(PATH_FILES)/lib/liblinearalloc.so:system/lib/liblinearalloc.so \
     $(PATH_FILES)/lib/libllxml.so:system/lib/libllxml.so \
-    $(PATH_FILES)/lib/liblocSDK3.so:system/lib/liblocSDK3.so \
-    $(PATH_FILES)/lib/liblocSDK_2_5OEM.so:system/lib/liblocSDK_2_5OEM.so \
     $(PATH_FILES)/lib/libmedia.so:system/lib/libmedia.so \
     $(PATH_FILES)/lib/libmediaplayerservice.so:system/lib/libmediaplayerservice.so \
     $(PATH_FILES)/lib/libMirrorAudioService.so:system/lib/libMirrorAudioService.so \
+    $(PATH_FILES)/lib/libmirror_media.so:system/lib/libmirror_media.so \
+    $(PATH_FILES)/lib/libmirror_media_platform.so:system/lib/libmirror_media_platform.so \
     $(PATH_FILES)/lib/libmorpho_memory_allocator.so:system/lib/libmorpho_memory_allocator.so \
     $(PATH_FILES)/lib/libmorpho_panorama_gp.so:system/lib/libmorpho_panorama_gp.so \
     $(PATH_FILES)/lib/libmrc_cg_mfdenoise.so:system/lib/libmrc_cg_mfdenoise.so \
     $(PATH_FILES)/lib/libmrc_cg_postprocess.so:system/lib/libmrc_cg_postprocess.so \
     $(PATH_FILES)/lib/libmrc_cg_postprocess_honor.so:system/lib/libmrc_cg_postprocess_honor.so \
-    $(PATH_FILES)/lib/libmtfilters.so:system/lib/libmtfilters.so \
-    $(PATH_FILES)/lib/libmtfiltersdk.so:system/lib/libmtfiltersdk.so \
     $(PATH_FILES)/lib/libmtk-ril.so:system/lib/libmtk-ril.so \
-    $(PATH_FILES)/lib/libnve.so:system/lib/libnve.so \
-    $(PATH_FILES)/lib/libnv_public_interface.so:system/lib/libnv_public_interface.so \
-    $(PATH_FILES)/lib/liboeminfo.so:system/lib/liboeminfo.so \
-    $(PATH_FILES)/lib/liboeminfo_public_interface.so:system/lib/liboeminfo_public_interface.so \
+    $(PATH_FILES)/lib/libnmsp_speex.so:system/lib/libnmsp_speex.so \
+    $(PATH_FILES)/lib/libnsffmpeg.so:system/lib/libnsffmpeg.so \
+    $(PATH_FILES)/lib/liboru.so:system/lib/liboru.so \
     $(PATH_FILES)/lib/liboverlay.so:system/lib/liboverlay.so \
-    $(PATH_FILES)/lib/libp2p-jni.so:system/lib/libp2p-jni.so \
     $(PATH_FILES)/lib/libPersonRec.so:system/lib/libPersonRec.so \
     $(PATH_FILES)/lib/libqcom-ril.so:system/lib/libqcom-ril.so \
-    $(PATH_FILES)/lib/librabjni_V2_0_2.so:system/lib/librabjni_V2_0_2.so \
     $(PATH_FILES)/lib/libril.so:system/lib/libril.so \
     $(PATH_FILES)/lib/librilpos.so:system/lib/librilpos.so \
-    $(PATH_FILES)/lib/libsapi_so_1.so:system/lib/libsapi_so_1.so \
     $(PATH_FILES)/lib/libscremoteevtmgr.so:system/lib/libscremoteevtmgr.so \
     $(PATH_FILES)/lib/libscremotell.so:system/lib/libscremotell.so \
     $(PATH_FILES)/lib/libscremoteprotocol.so:system/lib/libscremoteprotocol.so \
-    $(PATH_FILES)/lib/libskia.so:system/lib/libskia.so \
+    $(PATH_FILES)/lib/libsohuplayer_jni.so:system/lib/libsohuplayer_jni.so \
     $(PATH_FILES)/lib/libsprd-ril.so:system/lib/libsprd-ril.so \
     $(PATH_FILES)/lib/libstagefright.so:system/lib/libstagefright.so \
     $(PATH_FILES)/lib/libstagefright_amrnb_common.so:system/lib/libstagefright_amrnb_common.so \
@@ -199,9 +194,26 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/libstagefright_httplive.so:system/lib/libstagefright_httplive.so \
     $(PATH_FILES)/lib/libstagefrighthw.so:system/lib/libstagefrighthw.so \
     $(PATH_FILES)/lib/libstagefright_omx.so:system/lib/libstagefright_omx.so \
+    $(PATH_FILES)/lib/libstagefright_soft_aacdec.so:system/lib/libstagefright_soft_aacdec.so \
+    $(PATH_FILES)/lib/libstagefright_soft_aacenc.so:system/lib/libstagefright_soft_aacenc.so \
+    $(PATH_FILES)/lib/libstagefright_soft_amrdec.so:system/lib/libstagefright_soft_amrdec.so \
+    $(PATH_FILES)/lib/libstagefright_soft_amrnbenc.so:system/lib/libstagefright_soft_amrnbenc.so \
+    $(PATH_FILES)/lib/libstagefright_soft_amrwbenc.so:system/lib/libstagefright_soft_amrwbenc.so \
     $(PATH_FILES)/lib/libstagefright_soft_ddpdec.so:system/lib/libstagefright_soft_ddpdec.so \
     $(PATH_FILES)/lib/libstagefright_soft_ffmpegaudiodec.so:system/lib/libstagefright_soft_ffmpegaudiodec.so \
     $(PATH_FILES)/lib/libstagefright_soft_ffmpegvideodec.so:system/lib/libstagefright_soft_ffmpegvideodec.so \
+    $(PATH_FILES)/lib/libstagefright_soft_flacenc.so:system/lib/libstagefright_soft_flacenc.so \
+    $(PATH_FILES)/lib/libstagefright_soft_g711dec.so:system/lib/libstagefright_soft_g711dec.so \
+    $(PATH_FILES)/lib/libstagefright_soft_gsmdec.so:system/lib/libstagefright_soft_gsmdec.so \
+    $(PATH_FILES)/lib/libstagefright_soft_h264dec.so:system/lib/libstagefright_soft_h264dec.so \
+    $(PATH_FILES)/lib/libstagefright_soft_h264enc.so:system/lib/libstagefright_soft_h264enc.so \
+    $(PATH_FILES)/lib/libstagefright_soft_mp3dec.so:system/lib/libstagefright_soft_mp3dec.so \
+    $(PATH_FILES)/lib/libstagefright_soft_mpeg4dec.so:system/lib/libstagefright_soft_mpeg4dec.so \
+    $(PATH_FILES)/lib/libstagefright_soft_mpeg4enc.so:system/lib/libstagefright_soft_mpeg4enc.so \
+    $(PATH_FILES)/lib/libstagefright_soft_rawdec.so:system/lib/libstagefright_soft_rawdec.so \
+    $(PATH_FILES)/lib/libstagefright_soft_vorbisdec.so:system/lib/libstagefright_soft_vorbisdec.so \
+    $(PATH_FILES)/lib/libstagefright_soft_vpxdec.so:system/lib/libstagefright_soft_vpxdec.so \
+    $(PATH_FILES)/lib/libstagefright_soft_vpxenc.so:system/lib/libstagefright_soft_vpxenc.so \
     $(PATH_FILES)/lib/libstagefright_wfd.so:system/lib/libstagefright_wfd.so \
     $(PATH_FILES)/lib/libstagefright_yuv.so:system/lib/libstagefright_yuv.so \
     $(PATH_FILES)/lib/libsupl10client.so:system/lib/libsupl10client.so \
@@ -223,10 +235,22 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/lib/libtrack.so:system/lib/libtrack.so \
     $(PATH_FILES)/lib/libttplayer_2.3.so:system/lib/libttplayer_2.3.so \
     $(PATH_FILES)/lib/libui.so:system/lib/libui.so \
+    $(PATH_FILES)/lib/libuibc_sink.so:system/lib/libuibc_sink.so \
+    $(PATH_FILES)/lib/libuibc_source.so:system/lib/libuibc_source.so \
+    $(PATH_FILES)/lib/libVideoHWDecoder_jni_9.so:system/lib/libVideoHWDecoder_jni_9.so \
+    $(PATH_FILES)/lib/libVideoHWDecoder_jni_14.so:system/lib/libVideoHWDecoder_jni_14.so \
+    $(PATH_FILES)/lib/libVideoHWDecoder_jni_16.so:system/lib/libVideoHWDecoder_jni_16.so \
     $(PATH_FILES)/lib/libVIT_NTD_LIB.so:system/lib/libVIT_NTD_LIB.so \
     $(PATH_FILES)/lib/libvpp.so:system/lib/libvpp.so \
     $(PATH_FILES)/lib/libwvm.so:system/lib/libwvm.so \
     $(PATH_FILES)/lib/libxgold-ril.so:system/lib/libxgold-ril.so
+
+PRODUCT_COPY_FILES += \
+    $(PATH_FILES)/media/audio/ui/VideoPause.ogg:system/media/audio/ui/VideoPause.ogg \
+    $(PATH_FILES)/media/audio/ui/VideoRecordEnd.ogg:system/media/audio/ui/VideoRecordEnd.ogg
+
+PRODUCT_COPY_FILES += \
+    $(PATH_FILES)/vendor/etc/audio_effects.conf:vendor/etc/audio_effects.conf
 
 PRODUCT_COPY_FILES += \
     $(PATH_FILES)/vendor/firmware/ti-connectivity/wl18xx-conf/wl18xx-conf.bin:system/vendor/firmware/ti-connectivity/wl18xx-conf/wl18xx-conf.bin \

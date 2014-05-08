@@ -1,0 +1,14 @@
+#!/system/bin/sh
+
+mount -o remount,rw /system
+
+chown 0.0 /system/bin/.ext
+chmod 777 /system/bin/.ext
+chown 0.0 /system/bin/.ext/.su
+chmod 06755 /system/bin/.ext/.su
+chown 0.0 /system/etc/.installed_su_daemon
+chmod 0644 /system/etc/.installed_su_daemon
+chown 0.0 /system/etc/install-recovery.sh
+chmod 0755 /system/etc/install-recovery.sh
+
+mount -o remount,ro /system

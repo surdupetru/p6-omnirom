@@ -65,7 +65,6 @@
     <permission name="android.permission.WRITE_EXTERNAL_STORAGE" >
         <group gid="sdcard_r" />
         <group gid="sdcard_rw" />
-        <group gid="media_rw" />
     </permission>
 
     <permission name="android.permission.ACCESS_ALL_EXTERNAL_STORAGE" >
@@ -134,6 +133,10 @@
 
     <assign-permission name="android.permission.ACCESS_SURFACE_FLINGER" uid="graphics" />
 
+    <!-- BEGIN PN:20130609 DTS2013060902616,added by wuzhen 00213434, 2013/06/09 --> 
+    <assign-permission name="android.permission.IBINDER_APP_WIDGET_SERVICE" uid="shell" />
+    <assign-permission name="android.permission.IBINDER_NOTIFICATION_SERVICE" uid="shell" />
+    <!-- END PN:20130609 DTS2013060902616,added by wuzhen 00213434, 2013/06/09 -->
     <!-- This is a list of all the libraries available for application
          code to link against. -->
 

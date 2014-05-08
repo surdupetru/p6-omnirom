@@ -69,10 +69,8 @@ loglevel 3
 
     # Directory for putting things only root should see.
     mkdir /mnt/secure 0700 root root
-    # /* <DTS2013123108001 anzhen 00210929 20130420 begin only use in Edge 4.4*/
-    # Create private mountpoint so we can MS_MOVE from staging
+
     mount tmpfs tmpfs /mnt/secure mode=0700,uid=0,gid=0
-    # /* DTS2013123108001 anzhen 00210929 20130420 end> */
 
     # Directory for staging bindmounts
     mkdir /mnt/secure/staging 0700 root root
@@ -145,14 +143,12 @@ loglevel 3
     chmod 777 /dev/graphics/fb0
     chmod 777 /dev/graphics/galcore
     
-# DTS2012122104340 y00223734  This is needed by nfc service 
     chown system system /sys/bus/i2c/devices/1-0028/nfc_ven
     chmod 0664 /sys/bus/i2c/devices/1-0028/nfc_ven
     chown system system /sys/bus/i2c/devices/1-0028/nfc_module
     chmod 0664 /sys/bus/i2c/devices/1-0028/nfc_module
     chown system system /sys/bus/i2c/devices/1-0028/nfc_product
     chmod 0664 /sys/bus/i2c/devices/1-0028/nfc_product
-
 
     write /sys/module/block2mtd/parameters/block2mtd /dev/block/mmcblk0p3
     
@@ -420,9 +416,8 @@ on post-fs
     mount rootfs rootfs / ro remount
     # mount shared so changes propagate into child namespaces
     mount rootfs rootfs / shared rec
-    # /* <DTS2013123108001 anzhen 00210929 20130420 begin only use in Edge 4.4*/
+
     mount tmpfs tmpfs /mnt/secure private rec
-    # /* DTS2013123108001 anzhen 00210929 20130420 end> */
 
     # We chown/chmod /cache again so because mount is run as root + defaults
     chown system cache /cache
@@ -463,7 +458,6 @@ on post-fs-data
 
     # Avoid predictable entropy pool. Carry over entropy from previous boot.
     copy /data/system/entropy.dat /dev/urandom
-
     
     # Create dump dir and collect dumps.
     # Do this before we mount cache so eventually we can use cache for
@@ -482,7 +476,6 @@ on post-fs-data
     copy /proc/apanic_srecorder /data/dontpanic/apanic_srecorder
     chown root log /data/dontpanic/apanic_srecorder
     chmod 0644 /data/dontpanic/apanic_srecorder
-    #DTS2012071909013 modified by z222844 for get log tools, end
     
     write /proc/apanic_console 1
 
@@ -532,12 +525,8 @@ on post-fs-data
     # create directory for DRM plug-ins - give drm the read/write access to
     # the following directory.
     mkdir /data/drm 0770 drm drm
-    # DTS2013112400485 tiandazhang/00107790 20131125 begin
     mkdir /data/drm/rights 0770 drm drm
-    # DTS2013112400485 tiandazhang/00107790 20131125 end
-    #/* <DTS2012080201243 tiandazhang 20120802 begin */
     mkdir /data/drm/widevine 0770 drm drm
-    #/* DTS2012080201243 tiandazhang 20120802 end> */
 
     # create directory for MediaDrm plug-ins - give drm the read/write access to
     # the following directory.
@@ -690,7 +679,7 @@ on boot
     chown system system /sys/kernel/ipv4/tcp_rmem_max
     chown root radio /proc/cmdline
     chown system system /sys/bus/i2c/devices/0-0033/tps61310_led_lightness
-    #DTS2012110108070 g00212954 20121206 start#
+
     chown system system /sys/bus/i2c/devices/0-0033/thermal_protect_flash_led_state
     chmod 0660 /sys/bus/i2c/devices/0-0033/thermal_protect_flash_led_state
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_block_freq
@@ -705,7 +694,7 @@ on boot
     chmod 0660 /sys/bus/i2c/devices/1-006b/hot_enable_charger
     chown system /sys/bus/i2c/devices/1-006b/hot_limit_charging
     chmod 0660 /sys/bus/i2c/devices/1-006b/hot_limit_charging
-    #DTS2012110108070 g00212954 20121206 end#
+
     chown system system /sys/touch_screen/update
     chmod 0664 /sys/touch_screen/update
     
@@ -860,24 +849,15 @@ service console /system/bin/sh
 on property:ro.debuggable=1
     start console
 
-# adbd is controlled via property triggers in init.<platform>.usb.rc
 service adbd /sbin/adbd
     class core
     socket adbd stream 660 system system
     disabled
     seclabel u:r:adbd:s0
 
-# adbd on at boot in emulator
 on property:ro.kernel.qemu=1
     start adbd
 
-# This property trigger has added to imitiate the previous behavior of "adb root".
-# The adb gadget driver used to reset the USB bus when the adbd daemon exited,
-# and the host side adb relied on this behavior to force it to reconnect with the
-# new adbd instance after init relaunches it. So now we force the USB bus to reset
-# here when adbd sets the service.adb.root property to 1.  We also restart adbd here
-# rather than waiting for init to notice its death and restarting it so the timing
-# of USB resetting and adb restarting more closely matches the previous behavior.
 on property:service.adb.root=1
     write /sys/class/android_usb/android0/enable 0
     restart adbd
@@ -893,6 +873,7 @@ service servicemanager /system/bin/servicemanager
     onrestart restart media
     onrestart restart surfaceflinger
     onrestart restart drm
+#    onrestart restart keystore
 
 service vold /system/bin/vold
     class core
@@ -932,18 +913,12 @@ service ril-daemon /system/bin/rild
     user root
     group radio cache inet misc audio sdcard_r sdcard_rw log system
 
-service phs /system/xbin/phoneserver -v 0 -d 2
-    class main
-    user root
-    group radio cache inet misc audio sdcard_rw log
-	disabled
-
 service sprd_download /system/bin/sprd_download
     class main
     user root
     group radio cache inet misc audio sdcard_rw log system
-	disabled
-	oneshot
+    disabled
+    oneshot
 
 service nvm_server_sprd /system/bin/nvm_server_sprd
     class main
@@ -964,7 +939,6 @@ service nvm-server /system/bin/nvm_server
     socket nvm-ctl stream 660 radio radio
     user root
     group radio
-    #oneshot
 
 service surfaceflinger /system/bin/surfaceflinger
     class main
@@ -1012,7 +986,6 @@ service flash_recovery /system/etc/install-recovery.sh
 service racoon /system/bin/racoon
     class main
     socket racoon stream 600 system system
-    # IKE uses UDP port 500. Racoon will setuid to vpn after binding the port.
     group vpn net_admin inet
     disabled
     oneshot
@@ -1051,18 +1024,17 @@ service mdnsd /system/bin/mdnsd
 service logserver /system/bin/logserver
     class main
     socket logservice stream 0660 system system
-    #disabled
 
 service akmd8963  /system/bin/akmd8963
-	class main
-	oneshot
+    class main
+    oneshot
 
 service yamaha_ori /system/bin/orientationd
-	disabled
+    disabled
     oneshot
 
 service yamaha_geo /system/bin/geomagneticd
-	disabled
+    disabled
     oneshot
 
 service hw_pcui_service /system/bin/hw_modem_service /dev/ttyGS1 /dev/mux_qsc5

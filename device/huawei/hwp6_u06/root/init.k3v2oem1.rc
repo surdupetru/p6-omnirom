@@ -38,10 +38,6 @@ on post-fs-data
     chown media_rw media_rw /data/media
     chmod 0775 /data/media
 
-    mkdir /data/share 0775 media_rw media_rw
-    chown media_rw media_rw /data/share
-    chmod 0775 /data/share
-
     setprop vold.post_fs_data_done 1
 
 on fs
@@ -57,15 +53,15 @@ on boot
     chmod 777 /dev/galcore
     chmod 777 /dev/graphics/galcore
 
-	chown system system /sys/class/leds/lcd_backlight0/brightness
-	chmod 664 /sys/class/leds/lcd_backlight0/brightness
+    chown system system /sys/class/leds/lcd_backlight0/brightness
+    chmod 664 /sys/class/leds/lcd_backlight0/brightness
 
-        chown system system /sys/class/leds/red/delay_on
-        chown system system /sys/class/leds/red/delay_off
-        chown system system /sys/class/leds/green/delay_on
-        chown system system /sys/class/leds/green/delay_off
-        chown system system /sys/class/leds/blue/delay_on
-        chown system system /sys/class/leds/blue/delay_off
+    chown system system /sys/class/leds/red/delay_on
+    chown system system /sys/class/leds/red/delay_off
+    chown system system /sys/class/leds/green/delay_on
+    chown system system /sys/class/leds/green/delay_off
+    chown system system /sys/class/leds/blue/delay_on
+    chown system system /sys/class/leds/blue/delay_off
         
     chown system system sys/devices/sensor00/fn01/wakeup_threshold
     chown system system sys/devices/sensor00/fn01/nosleep
@@ -93,12 +89,11 @@ on boot
     chown system system sys/devices/sensor00/fn34/blocknum
     chown system system sys/devices/sensor00/enabled
     
-	chown system system sys/devices/virtual/mhl/siI-8240/rcp_keycode
-	chown system system sys/devices/virtual/mhl/siI-8240/rcp_ack
-	chown system system sys/devices/virtual/mhl/siI-8240/devcap
+    chown system system sys/devices/virtual/mhl/siI-8240/rcp_keycode
+    chown system system sys/devices/virtual/mhl/siI-8240/rcp_ack
+    chown system system sys/devices/virtual/mhl/siI-8240/devcap
 
- 	chown system system sys/class/torch/torch_led/lightness   
-    
+    chown system system sys/class/torch/torch_led/lightness    
     
     mkdir /data/sensor/
     chmod 777 /data/sensor/
@@ -119,21 +114,21 @@ on boot
     chmod 777 /proc/HiAcoustic/control
     chmod 777 /proc/HiAcoustic/threshold
 
-	mkdir /data/gnss
-	mkdir /data/gnss/logs
-	mkdir /data/gnss/nvs
-	mkdir /data/gnss/RXN
-	mkdir /data/gnss/RXN/RXN
-	mkdir /data/gnss/log_MD
+    mkdir /data/gnss
+    mkdir /data/gnss/logs
+    mkdir /data/gnss/nvs
+    mkdir /data/gnss/RXN
+    mkdir /data/gnss/RXN/RXN
+    mkdir /data/gnss/log_MD
 		
-	chmod 777 /data/spminterfacelog.txt
-	chmod 777 /data/suplclientlog.txt
+    chmod 777 /data/spminterfacelog.txt
+    chmod 777 /data/suplclientlog.txt
 
-	chmod 777 /data/gnss
-	chmod 777 /data/gnss/logs
-	chmod 777 /data/gnss/nvs
-	chmod 777 /data/gnss/RXN
-	chmod 777 /data/gnss/log_MD
+    chmod 777 /data/gnss
+    chmod 777 /data/gnss/logs
+    chmod 777 /data/gnss/nvs
+    chmod 777 /data/gnss/RXN
+    chmod 777 /data/gnss/log_MD
 
 #*
     insmod /system/lib/modules/compat.ko
@@ -267,12 +262,12 @@ on boot
 
     chown system system /sys/devices/platform/dw-i2c.0/i2c-0/0-001e/enable
     chown system system /sys/devices/platform/dw-i2c.0/i2c-0/0-001e/pollrate_ms
-	chown system system /sys/devices/platform/dw-i2c.0/i2c-0/0-001e/accl_data
-	chown system system /sys/devices/platform/dw-i2c.0/i2c-0/0-001d/enable
+    chown system system /sys/devices/platform/dw-i2c.0/i2c-0/0-001e/accl_data
+    chown system system /sys/devices/platform/dw-i2c.0/i2c-0/0-001d/enable
     chown system system /sys/devices/platform/dw-i2c.0/i2c-0/0-001d/pollrate_ms
-	chown system system /sys/devices/platform/dw-i2c.0/i2c-0/0-001d/accl_data
-	chown system system /sys/devices/platform/dw-i2c.0/i2c-0/0-001e/calibrate
-	chown system system /sys/bus/i2c/devices/0-001e/calibrate
+    chown system system /sys/devices/platform/dw-i2c.0/i2c-0/0-001d/accl_data
+    chown system system /sys/devices/platform/dw-i2c.0/i2c-0/0-001e/calibrate
+    chown system system /sys/bus/i2c/devices/0-001e/calibrate
  
     chown system system /sys/devices/platform/dw-i2c.0/i2c-0/0-001c/enable
     chown system system /sys/devices/platform/dw-i2c.0/i2c-0/0-001c/pollrate_ms
@@ -314,9 +309,9 @@ on boot
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_policy
     chown system system /sys/devices/platform/k3_dev_lcd/cabc_mode
 
-	chown system system /sys/devices/platform/k3_fb.196609/frc_state
+    chown system system /sys/devices/platform/k3_fb.196609/frc_state
 
-        chown system system /sys/devices/platform/k3_fb.196609/sbl_lsensor_state
+    chown system system /sys/devices/platform/k3_fb.196609/sbl_lsensor_state
 
      chmod 0660 /sys/bus/i2c/devices/1-006b/enable_charger
      chown system system /sys/bus/i2c/devices/1-006b/enable_charger
@@ -370,8 +365,14 @@ on boot
     chown system system /sys/module/n_gsm_qsc/parameters/debug
     chown system system /sys/module/n_gsm_mtk/parameters/debug
 
-service sdcard /system/bin/sdcard /data/share /mnt/shell/emulated/ 1015 1015
-   class main
+service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated/ 1023 1023
+   class late_start
+
+on property:ro.fuse_sdcard=true
+    start sdcard
+
+on property:ro.crypto.fuse_sdcard=true
+    start sdcard
 
 service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1015 -d /mnt/media_rw/sdcard1 /storage/sdcard1
    class late_start
@@ -404,7 +405,7 @@ service dhcpcd_wlan0 /system/bin/dhcpcd -aABDKL
     disabled
     oneshot
 
-service iprenew_wlan0 /system/bin/dhcpcd -n
+service iprenew_wlan0 /system/bin/dhcpcd -nBK
     class main
     disabled
     oneshot
@@ -414,15 +415,15 @@ service dhcpcd_p2p /system/bin/dhcpcd -aABKL
     disabled
     oneshot
 
-service iprenew_p2p /system/bin/dhcpcd -n
+service iprenew_p2p /system/bin/dhcpcd -nBK
     class main
     disabled
     oneshot
 
 service iprenew_bt-pan /system/bin/dhcpcd -n
-	class main
-	disabled
-	oneshot
+    class main
+    disabled
+    oneshot
 
 service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
     class main
@@ -475,9 +476,9 @@ service chargelogcat /system/bin/chargelogcat -t 2 -p /data/android_logs/
     disabled
 
 service uim /system/bin/uim-sysfs
-        class core
-        user root
-        group bluetooth net_bt_admin
+    class core
+    user root
+    group bluetooth net_bt_admin
 
 service gpsd  /system/bin/glgps -c /system/etc/gpsconfig.xml
     socket gps seqpacket 777 root root
@@ -498,41 +499,41 @@ service akm8975 /system/bin/akm8975 -m 3
 
 # TI-GPS start
 service devproxy /system/bin/devproxy
-        class main
-        disabled
-        oneshot
-        user root
-        group root
+    class main
+    disabled
+    oneshot
+    user root
+    group root
 
 service agnss_connect /system/bin/agnss_connect -p
-        class main
-        disabled
-        oneshot
-        user root
-        group root
+    class main
+    disabled
+    oneshot
+    user root
+    group root
 
 service RXN_IntApp /system/bin/RXN_IntApp /system/etc/gnss/RXN/MSLConfig.txt
-        oneshot
-        user root
-        group root
+    oneshot
+    user root
+    group root
 
 service cplc_main /system/bin/cplc_main XML
-        disabled
-        oneshot
+    disabled
+    oneshot
 
 service supl20clientd /system/bin/supl20clientd
-        class main
-        oneshot
+    class main
+    oneshot
 
 service Log_MD /system/bin/Log_MD
-	disabled
-	oneshot
+    disabled
+    oneshot
 
 service mw3 /system/bin/mw3.bin
-	class main
-	user root
-	group root
-	oneshot
+    class main
+    user root
+    group root
+    oneshot
 
 #TI-GPS end
 

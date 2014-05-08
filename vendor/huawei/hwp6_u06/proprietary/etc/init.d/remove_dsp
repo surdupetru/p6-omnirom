@@ -1,0 +1,8 @@
+#!/system/bin/sh
+
+mount -o remount,rw /system
+
+rm /system/app/DSPManager.apk
+rm /system/lib/soundfx/libcyanogen-dsp.so
+
+mount -o remount,ro /system

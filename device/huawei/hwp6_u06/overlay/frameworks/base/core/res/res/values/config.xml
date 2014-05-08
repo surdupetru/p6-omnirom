@@ -21,11 +21,11 @@
      for different hardware and product builds. -->
 <resources>
 
-    <bool name="config_sf_limitedAlpha">false</bool>
+   <!-- If this is true, the screen will fade off. -->
+    <bool name="config_animateScreenLights">false</bool>
 
-    <bool name="config_sf_slowBlur">true</bool>
-
-    <bool name="config_sendAudioBecomingNoisy">true</bool>
+    <!-- Default color for notification LED is green. -->
+    <color name="config_defaultNotificationColor">#ff00ff00</color>
 
     <string-array translatable="false" name="networkAttributes">
         <item>"wifi,1,1,1,-1,true"</item>
@@ -37,7 +37,6 @@
         <item>"mobile_bluetooth,7,7,1,-1,true"</item>
         <item>"wifi_p2p,13,1,0,-1,true"</item>
     </string-array>
-
 
     <!-- This string array should be overridden by the device to present a list of radio
          attributes.  This is used by the connectivity manager to decide which networks can coexist
@@ -95,13 +94,6 @@
 
     <bool name="config_unplugTurnsOnScreen">true</bool>
 
-    <string-array name="config_locationProviderPackageNames" translatable="false">
-        <!-- The standard AOSP fused location provider -->
-        <item>com.android.location.fused</item>
-        <!-- The Google Network Location Services location provider -->
-        <item>com.google.android.location</item>
-    </string-array>
-
     <bool name="config_showNavigationBar">true</bool>
 
     <bool name="config_automatic_brightness_available">true</bool>
@@ -158,14 +150,17 @@
         <item>250</item>
     </integer-array>
 
+    <!-- Maximum screen brightness allowed by the power manager.
+The user is forbidden from setting the brightness above this level. -->
+    <integer name="config_screenBrightnessSettingMaximum">255</integer>
 
-    <bool name="config_voice_capable">true</bool>
+    <!-- Default screen brightness setting.
+Must be in the range specified by minimum and maximum. -->
+    <integer name="config_screenBrightnessSettingDefault">100</integer>
 
-    <bool name="config_sms_capable">true</bool>
-
-    <bool name="config_bluetooth_sco_off_call">true</bool>
-
-    <bool name="config_sip_wifi_only">false</bool>
+   <!-- The duration (in milliseconds) that the radio will scan for a signal
+when there's no network connection. If the scan doesn't timeout, use zero -->
+    <integer name="config_radioScanningTimeout">9000</integer>
 
     <!-- Enables built-in SIP phone capability -->
     <bool name="config_built_in_sip_phone">true</bool>
@@ -178,8 +173,6 @@
    <bool name="config_dreamsSupported">true</bool>
 
    <integer name="config_multiuserMaximumUsers">8</integer>
-
-   <!-- <bool name="config_camera_sound_forced">true</bool>-->
 
     <bool name="config_hasRotationLockSwitch">true</bool>
 
@@ -197,7 +190,29 @@
          config to 7. -->
     <integer name="config_deviceHardwareKeys">7</integer>
 
+    <bool translatable="false" name="skip_restoring_network_selection">true</bool>
+
+    <bool name="config_cellBroadcastAppLinks">true</bool>
+
+    <bool name="config_ui_enableFadingMarquee">false</bool>
+
+    <integer name="config_safe_media_volume_index">7</integer>
+
+    <!-- We dont have different firmware for wifi modes, prevent reloading it -->	
     <bool name="config_wifiApFirmwareReload">false</bool>
+
+    <!--<bool name="config_enableWifiDisplay">true</bool> -->
+
+    <bool name="config_speed_up_audio_on_mt_calls">true</bool>
+
+    <bool name="config_lidControlsSleep">true</bool>
+
+    <dimen name="config_minScalingSpan">35mm</dimen>
+
+    <bool name="config_offscreenGestureSupport">true</bool>
+
+    <!-- Disable lockscreen translucent decor by default -->
+    <bool name="config_enableLockScreenTranslucentDecor">true</bool>
 
     <bool name="config_intrusiveNotificationLed">true</bool>
 
