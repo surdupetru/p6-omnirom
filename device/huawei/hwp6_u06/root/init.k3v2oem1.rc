@@ -28,8 +28,6 @@ on init
     mkdir /mnt/media_rw 0700 media_rw media_rw
     mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
     mkdir /storage/sdcard1 0700 root root
-
-
  
     mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
     mkdir /storage/usbotg 0700 root root
@@ -371,7 +369,7 @@ on boot
     chown system system /sys/module/n_gsm_qsc/parameters/debug
     chown system system /sys/module/n_gsm_mtk/parameters/debug
 
-service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated/ 1023 1023
+service sdcard /system/bin/sdcard /data/share /mnt/shell/emulated/ 1015 1015
    class main
 
 service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -w 1015 -d /mnt/media_rw/sdcard1 /storage/sdcard1
