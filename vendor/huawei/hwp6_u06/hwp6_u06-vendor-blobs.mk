@@ -17,7 +17,6 @@ PATH_FILES := vendor/huawei/hwp6_u06/proprietary
 PRODUCT_COPY_FILES += \
     $(PATH_FILES)/app/DolbyMobileAudioEffectService.apk:system/app/DolbyMobileAudioEffectService.apk \
     $(PATH_FILES)/app/GlobalDolbyEffect.apk:system/app/GlobalDolbyEffect.apk \
-    $(PATH_FILES)/app/InCallUI.apk:system/app/InCallUI.apk \
     $(PATH_FILES)/app/Superuser.apk:system/app/Superuser.apk \
     $(PATH_FILES)/app/supl20Service.apk:system/app/supl20Service.apk
 
@@ -252,7 +251,7 @@ PRODUCT_COPY_FILES += \
     $(PATH_FILES)/media/audio/ui/VideoRecordEnd.ogg:system/media/audio/ui/VideoRecordEnd.ogg
 
 PRODUCT_COPY_FILES += \
-    $(PATH_FILES)/vendor/etc/audio_effects.conf:vendor/etc/audio_effects.conf
+    $(PATH_FILES)/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
 PRODUCT_COPY_FILES += \
     $(PATH_FILES)/vendor/firmware/ti-connectivity/wl18xx-conf/wl18xx-conf.bin:system/vendor/firmware/ti-connectivity/wl18xx-conf/wl18xx-conf.bin \
